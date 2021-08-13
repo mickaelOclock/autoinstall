@@ -172,7 +172,7 @@ function installdmg {
       package=$(ls -1 "$volume" | grep .pkg | head -1)
       sudo installer -pkg "$volume"/"$package" -target /
     fi
-    sudo hdiutil detach "$(echo "$listing" | cut -f 1)"
+    sudo hdiutil detach "$volume";
     rm -rf $tempd
     set +x
 }
